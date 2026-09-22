@@ -138,6 +138,13 @@ h1, h2, h3, .font-serif {
   color: var(--color-muted);
 }
 
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* 2. Navigation */
 .site-header {
   position: fixed;
@@ -145,10 +152,14 @@ h1, h2, h3, .font-serif {
   left: 0;
   width: 100%;
   padding: 2.5rem var(--gutter);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 2rem;
   align-items: center;
   z-index: 100;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: clip;
   mix-blend-mode: difference;
   color: #F9F8F6; /* Controls difference mode readability */
 }
@@ -162,13 +173,18 @@ h1, h2, h3, .font-serif {
 
 .main-nav {
   display: flex;
+  justify-self: center;
   gap: 3rem;
+  min-width: 0;
 }
 
 .header-actions {
   display: flex;
   align-items: center;
+  justify-self: end;
   gap: 1.5rem;
+  min-width: 0;
+  justify-content: center;
 }
 
 .nav-link {
@@ -767,7 +783,19 @@ h1, h2, h3, .font-serif {
   }
 
   .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    max-width: 100%;
     padding: 1rem var(--gutter);
+    overflow: hidden;
+  }
+
+  .header-actions {
+    margin-left: auto;
+    flex-shrink: 0;
   }
 
   .brand-logo {
