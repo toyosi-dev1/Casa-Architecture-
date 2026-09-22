@@ -1,7 +1,4 @@
-/* --------------------------------------------------------------------------
-   AUREL ARCHITECTURE STUDIO — CORE STYLESHEET
-   Aesthetic: Quiet, Architectural, Editorial, Sophisticated, Minimal
-   -------------------------------------------------------------------------- */
+
 
 :root {
   --color-bg: #F9F8F6;          /* Warm off-white */
@@ -19,7 +16,7 @@
   --gutter: 4rem;
 }
 
-/* Reset & Base Setup */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -60,18 +57,19 @@ button {
   cursor: pointer;
 }
 
-/* Visible keyboard focus everywhere */
+
 :focus-visible {
   outline: 1px solid currentColor;
   outline-offset: 4px;
 }
 
-/* Sections scroll to just below the fixed header */
+
+
 section[id] {
   scroll-margin-top: 4rem;
 }
 
-/* Typography Helpers */
+
 h1, h2, h3, .font-serif {
   font-family: var(--font-serif);
   font-weight: 400;
@@ -84,7 +82,7 @@ h1, h2, h3, .font-serif {
   padding: 0 var(--gutter);
 }
 
-/* Skip link */
+
 .skip-link {
   position: fixed;
   top: 0.75rem;
@@ -161,7 +159,7 @@ body {
   max-width: 100%;
   overflow: clip;
   mix-blend-mode: difference;
-  color: #F9F8F6; /* Controls difference mode readability */
+  color: #F9F8F6; 
 }
 
 .brand-logo {
@@ -266,7 +264,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   color: #F9F8F6;
-  /* Keeps light text legible on bright photography */
+  
   background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0) 35%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.4));
 }
 
@@ -362,7 +360,9 @@ body {
 }
 
 .project-card {
-  position: relative; /* anchor for the stretched link */
+  position: relative; 
+
+
 }
 
 .project-span-full {
@@ -382,7 +382,7 @@ body {
   grid-column: 2 / span 10;
 }
 
-/* The title link covers the whole card: one real link, whole card clickable */
+
 .project-link::after {
   content: '';
   position: absolute;
@@ -484,7 +484,7 @@ body {
   font-size: 0.95rem;
 }
 
-/* 8. Journal Section (static until article pages exist, so no pointer cursor) */
+/* 8. Journal Section */
 .journal-section {
   padding: 8rem 0;
   border-top: 1px solid var(--color-border);
@@ -606,7 +606,7 @@ body {
   box-shadow: 0 1px 0 0 var(--color-text);
 }
 
-/* Honeypot field: off-screen, not display:none, so bots still fill it */
+/* Honeypot field */
 .hp-field {
   position: absolute;
   left: -9999px;
@@ -728,7 +728,7 @@ body {
   gap: 0.5rem 1.5rem;
 }
 
-/* Scroll Revelations (only hidden when JS is running) */
+/* Scroll Revelations  */
 .js .reveal-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -895,13 +895,13 @@ body {
     gap: 1rem;
   }
 
-  /* Menu is closed by default; .nav-open on the header opens it */
+  /* Menu  */
   .main-nav {
     display: none;
   }
 
   .site-header.nav-open {
-    /* Blend mode would invert the solid panel, so turn it off while open */
+    
     mix-blend-mode: normal;
     background-color: var(--color-bg);
     color: var(--color-text);
