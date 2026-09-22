@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUREL — Architecture Studio</title>
+  <meta name="description" content="Independent architecture studio creating residential, hospitality, and cultural spaces.">
+
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Render-blocking on purpose: this is the only CSS the page has, and it's needed
+       immediately for the above-the-fold layout (header, hero). -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- LCP resource: start fetching the hero photo at top priority right away,
+       in parallel with style.css, instead of waiting for the parser to reach <img>. -->
+  <link rel="preload" as="image" href="Hero Image.png" fetchpriority="high" type="image/png">
+
+  <!-- Google Fonts: connect early, then load the stylesheet without blocking rendering.
+       Only the weights actually used in style.css are requested (serif: 400 regular only;
+       sans: 300 and 400 — no italic, no 500, were being downloaded unused). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Inter:wght@300;400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Inter:wght@300;400&display=swap" media="print" onload="this.media='all'; this.onload=null;">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Inter:wght@300;400&display=swap"></noscript>
+</head>
+<body>
+
+  <a href="#app" class="skip-link">Skip to content</a>
+
+  <!-- 1. INTRO / LOADING TRANSITION -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-content">
+      <span class="brand-mark">AUREL</span>
+      <span class="loader-meta">ARCHITECTURE / 01—26</span>
+    </div>
+  </div>
+  
+
+  <!-- 2. NAVIGATION -->
+  <header class="site-header" id="site-header">
+    <a href="#" class="brand-logo" id="nav-brand">AUREL</a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="#work" class="nav-link">WORK</a>
+      <a href="#studio" class="nav-link">STUDIO</a>
+      <a href="#journal" class="nav-link">JOURNAL</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#contact" class="nav-link contact-link">CONTACT</a>
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="menu-toggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="main-nav">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- HOME PAGE VIEW -->
+    <div id="view-home" class="view active-view">
+
+      <!-- 3. HERO -->
+      <section class="hero-section">
+        <div class="hero-image-wrapper">
+           
+          <img
+            src="Hero Image.png"
+            alt="Hero Architectural View"
+            class="hero-img"
+            width="1920"
+            height="1080"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="hero-overlay">
+          <div class="hero-header-group">
+            <h1 class="hero-title">AUREL</h1>
+            <p class="hero-tagline">ARCHITECTURE FOR THE UNEXPECTED.</p>
+          </div>
+          <div class="hero-bottom-group">
+            <p class="hero-subtext">Independent architecture studio creating residential, hospitality, and cultural spaces.</p>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. INTRODUCTION -->
+      <section class="intro-section" id="intro">
+        <div class="container">
+          <div class="asymmetric-grid">
+            <div class="grid-col-left">
+              <span class="section-label">PHILOSOPHY</span>
+            </div>
+            <div class="grid-col-right">
+              <h2 class="editorial-statement">
+                "We create spaces that remain after the image disappears."
+              </h2>
+              <p class="body-text">
+                Architecture is a silent medium. At AUREL, we design spaces defined not by decorative gestures, but by the quiet interplay of proportion, material weight, and natural light. Every project begins with a careful reading of context and a commitment to enduring permanence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. SELECTED WORK -->
+      <section class="work-section" id="work">
+        <div class="container">
+          <div class="section-header-group">
+            <h2 class="section-title">SELECTED WORK</h2>
+            <span class="section-counter">01 / 04</span>
+          </div>
+
+          <div class="project-editorial-grid">
+            <!-- Project 01 -->
+            <article class="project-card project-span-full">
+              <div class="project-media-wrapper reveal-on-scroll">
+                
+                <img src="File 1.png" alt="Casa Nera" width="1600" height="1000" loading="lazy" decoding="async">
+              </div>
+              <div class="project-meta">
+                <div class="project-header">
+                  <span class="project-num">01 —</span>
+                  <h3 class="project-name">
+                    <a class="project-link" href="#/project/casa-nera" data-project-link="casa-nera">CASA NERA</a>
+                  </h3>
+                </div>
+                <div class="project-details">
+                  <span>Lagos, Nigeria</span>
+                  <span>Private Residence</span>
+                  <span>2026</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 02 -->
+            <article class="project-card project-span-left">
+              <div class="project-media-wrapper reveal-on-scroll">
+                
+                <img src="File 2.png" alt="Villa 07" width="1600" height="1000" loading="lazy" decoding="async">
+              </div>
+              <div class="project-meta">
+                <div class="project-header">
+                  <span class="project-num">02 —</span>
+                  <h3 class="project-name">
+                    <a class="project-link" href="#/project/villa-07" data-project-link="villa-07">VILLA 07</a>
+                  </h3>
+                </div>
+                <div class="project-details">
+                  <span>Cape Town, South Africa</span>
+                  <span>Residential</span>
+                  <span>2025</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 03 -->
+            <article class="project-card project-span-right">
+              <div class="project-media-wrapper reveal-on-scroll">
+                
+                <img src="File 3.png" alt="The Monolith" width="1600" height="1000" loading="lazy" decoding="async">
+              </div>
+              <div class="project-meta">
+                <div class="project-header">
+                  <span class="project-num">03 —</span>
+                  <h3 class="project-name">
+                    <a class="project-link" href="#/project/the-monolith" data-project-link="the-monolith">THE MONOLITH</a>
+                  </h3>
+                </div>
+                <div class="project-details">
+                  <span>Dubai, UAE</span>
+                  <span>Cultural / Hospitality</span>
+                  <span>2025</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 04 -->
+            <article class="project-card project-span-wide">
+              <div class="project-media-wrapper reveal-on-scroll">
+                
+                <img src="File 4.png" alt="House Between" width="1600" height="1000" loading="lazy" decoding="async">
+              </div>
+              <div class="project-meta">
+                <div class="project-header">
+                  <span class="project-num">04 —</span>
+                  <h3 class="project-name">
+                    <a class="project-link" href="#/project/house-between" data-project-link="house-between">HOUSE BETWEEN</a>
+                  </h3>
+                </div>
+                <div class="project-details">
+                  <span>Accra, Ghana</span>
+                  <span>Private Residence</span>
+                  <span>2024</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. STUDIO -->
+      <section class="studio-section" id="studio">
+        <div class="container">
+          <div class="asymmetric-grid studio-grid">
+            <div class="grid-col-left">
+              <h2 class="section-title">THE STUDIO</h2>
+            </div>
+            <div class="grid-col-right">
+              <div class="studio-image-container reveal-on-scroll">
+                
+                <img src="File 5.png" alt="AUREL Architecture Studio Workspace" width="1500" height="1000" loading="lazy" decoding="async">
+              </div>
+              <div class="studio-content">
+                <p class="editorial-statement">
+                  Founded in 2021, AUREL is an independent architecture studio focused on spaces shaped by light, material, and context.
+                </p>
+                <div class="studio-disciplines">
+                  <span class="label">DISCIPLINES</span>
+                  <ul class="discipline-list">
+                    <li>Architecture</li>
+                    <li>Interior</li>
+                    <li>Hospitality</li>
+                    <li>Cultural Spaces</li>
+                    <li>Research</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. JOURNAL -->
+      
+      <section class="journal-section" id="journal">
+        <div class="container">
+          <div class="section-header-group">
+            <h2 class="section-title">JOURNAL</h2>
+            <span class="section-counter">PERSPECTIVES</span>
+          </div>
+
+          <div class="journal-list">
+            <article class="journal-item">
+              <div class="journal-image-preview reveal-on-scroll">
+                
+                <img src="File 6.png" alt="Concrete Texture" width="600" height="350" loading="lazy" decoding="async">
+              </div>
+              <div class="journal-content">
+                <div class="journal-meta-info">
+                  <span class="journal-category">Materials</span>
+                  <span class="journal-date">08.2026</span>
+                </div>
+                <h3 class="journal-title">THE QUIETNESS OF CONCRETE</h3>
+              </div>
+            </article>
+
+            <article class="journal-item">
+              <div class="journal-image-preview reveal-on-scroll">
+              
+                <img src="File 7.png" alt="Light and Shadow" width="600" height="350" loading="lazy" decoding="async">
+              </div>
+              <div class="journal-content">
+                <div class="journal-meta-info">
+                  <span class="journal-category">Process</span>
+                  <span class="journal-date">06.2026</span>
+                </div>
+                <h3 class="journal-title">DESIGNING WITH LIGHT</h3>
+              </div>
+            </article>
+
+            <article class="journal-item">
+              <div class="journal-image-preview reveal-on-scroll">
+                
+                <img src="File 4.png" alt="Architectural Space" width="600" height="350" loading="lazy" decoding="async">
+              </div>
+              <div class="journal-content">
+                <div class="journal-meta-info">
+                  <span class="journal-category">Perspective</span>
+                  <span class="journal-date">04.2026</span>
+                </div>
+                <h3 class="journal-title">WHEN SPACE BECOMES MEMORY</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. CONTACT -->
+      <section class="contact-section" id="contact">
+        <div class="container">
+          <div class="asymmetric-grid">
+            <div class="grid-col-left">
+              <span class="section-label">INQUIRIES</span>
+            </div>
+            <div class="grid-col-right">
+              <h2 class="contact-headline">Have a space in mind?</h2>
+
+              <div class="contact-info-grid">
+                <div>
+                  <a href="mailto:hello@aurel.studio" class="direct-email">hello@aurel.studio</a>
+                </div>
+                <div class="location-list">
+                  <span>Lagos</span>
+                  <span>Cape Town</span>
+                  <span>Dubai</span>
+                </div>
+              </div>
+
+              <form class="contact-form" id="inquiry-form" novalidate>
+                <div class="form-group">
+                  <label for="name">NAME</label>
+                  <input type="text" id="name" name="name" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label for="email">EMAIL</label>
+                  <input type="email" id="email" name="email" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                  <label for="project">PROJECT TYPE</label>
+                  <input type="text" id="project" name="project" placeholder="e.g. Residential / Hospitality">
+                </div>
+                <div class="form-group">
+                  <label for="message">MESSAGE</label>
+                  <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <div class="hp-field" aria-hidden="true">
+                  <label for="website">Leave this field empty</label>
+                  <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+                </div>
+
+                <button type="submit" class="submit-button" id="submit-button">SEND INQUIRY</button>
+                <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        <div class="container footer-container">
+          <span class="footer-brand">AUREL</span>
+          <span class="footer-copy">&copy; 2026 AUREL Studio. All rights reserved.</span>
+        </div>
+      </footer>
+    </div>
+
+    <!-- 6. DYNAMIC PROJECT DETAIL PAGE VIEW -->
+    <div id="view-project-detail" class="view inactive-view">
+      <div class="container">
+        <button type="button" class="back-link" id="btn-back-home">&larr; BACK TO WORK</button>
+        <div id="project-detail-content">
+          
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
