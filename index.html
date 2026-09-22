@@ -9,17 +9,17 @@
 
   <script>document.documentElement.classList.add('js');</script>
 
-  <!-- Render-blocking on purpose: this is the only CSS the page has, and it's needed
-       immediately for the above-the-fold layout (header, hero). -->
+  
+
+  
   <link rel="stylesheet" href="style.css">
 
-  <!-- LCP resource: start fetching the hero photo at top priority right away,
-       in parallel with style.css, instead of waiting for the parser to reach <img>. -->
+
+  
   <link rel="preload" as="image" href="Hero Image.png" fetchpriority="high" type="image/png">
 
-  <!-- Google Fonts: connect early, then load the stylesheet without blocking rendering.
-       Only the weights actually used in style.css are requested (serif: 400 regular only;
-       sans: 300 and 400 — no italic, no 500, were being downloaded unused). -->
+
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Inter:wght@300;400&display=swap">
